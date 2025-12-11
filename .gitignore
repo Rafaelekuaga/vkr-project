@@ -9,3 +9,19 @@ node_modules/
 # Docker 
 .env 
 docker-compose.override.yml 
+# Python 
+__pycache__/ 
+*.pyc 
+.env 
+.venv/ 
+ 
+# Node.js 
+node_modules/ 
+npm-debug.log* 
+.npm 
+ 
+# IDE 
+.vscode/ 
+.idea/ 
+*.swp 
+*.swo 
