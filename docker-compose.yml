@@ -1,0 +1,26 @@
+version: '3.8' 
+ 
+services: 
+  postgres: 
+    image: postgres:15 
+    environment: 
+      POSTGRES_DB: app_db 
+      POSTGRES_USER: app_user 
+      POSTGRES_PASSWORD: secure_password 
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data 
+ 
+  backend: 
+    build: ./backend 
+    ports: 
+      - "8000:8000" 
+    depends_on: 
+      - postgres 
+ 
+  frontend: 
+    build: ./frontend 
+    ports: 
+      - "3000:80" 
+ 
+volumes: 
+  postgres_data: 
